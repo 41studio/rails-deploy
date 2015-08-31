@@ -1,0 +1,10 @@
+---
+
+- name: Configure servers with ruby support
+  hosts: all
+
+  roles:
+    - kun432.build-essential
+    - geerlingguy.git
+    - cchurch.admin-users
+    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
