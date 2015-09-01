@@ -6,5 +6,7 @@
   roles:
     - kun432.build-essential
     - geerlingguy.git
+    - ANXS.postgresql
+    - radamanth.mysql-ansible
     - cchurch.admin-users
     - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
