@@ -7,6 +7,11 @@
     - kun432.build-essential
     - geerlingguy.git
     - ANXS.postgresql
-    - radamanth.mysql-ansible
+    - ANXS.mysql
     - cchurch.admin-users
     - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
+    - geerlingguy.passenger
+    - ANXS.monit
+    - bennojoy.memcached
+    - crushlovely.imagemagick
+    - geerlingguy.redis

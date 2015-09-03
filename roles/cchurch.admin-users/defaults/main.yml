@@ -1,9 +1,9 @@
 ---
 
-admin_users:
-- username: "mada"
-  fullname: "Mada Aryakusumah"
-  pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlNqfo273izwsHvaVcaKudP0LCqSdVyQE3ey4ZdYB3+UT60hYMxtmgd2WC7zZ2Ovxvghp+vEQ/A7sShc1SJl73O4ifJPx4o39qSbdK9MSM54ZeH608TYI27iYgDnKQ52kmG0R4tcRvzFpqCVXYD5PW4zQuyW4usPDXoVZbc73eDiELJRhSZZMxHGL7vgWy3D3m0FkgUXiZV3DBNCmg6GSMYfsoOpjOMb7nhxTA3jJTTe1L8jduWvS0qBImQF7cD+GQ4bHgboqnvdA3TgUtNo92y/ZB8kh0eHOy/AFrdVq9M1zCyyvSiB1Hajhvt/e1yVh/BfP9EkBgRqif5mcdd8AZ me@madaarya.com"
+admin_users: []
+# - username: "mada"
+  # fullname: "Mada Aryakusumah"
+  # pubkey: "ssh-rsa .."
 
 admin_users_sudo_nopasswd: true
 

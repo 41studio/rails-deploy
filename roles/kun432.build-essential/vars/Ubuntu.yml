@@ -8,3 +8,7 @@ buildessential_packages:
   - flex
   - gettext
   - libncurses5-dev
+  - libxml2
+  - libxml2-dev
+  - libxslt1-dev
+  - zlib1g-dev
