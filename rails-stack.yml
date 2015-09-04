@@ -2,16 +2,20 @@
 
 - name: Configure servers with ruby support
   hosts: all
+  vars_prompt:
+    - name: "database_choice"
+      prompt: "Please select database [postgresql/mysql]"
+      private: yes
 
   roles:
-    - kun432.build-essential
-    - geerlingguy.git
-    - ANXS.postgresql
-    - ANXS.mysql
-    - cchurch.admin-users
-    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
-    - geerlingguy.passenger
-    - ANXS.monit
-    - bennojoy.memcached
-    - crushlovely.imagemagick
-    - geerlingguy.redis
+      - kun432.build-essential
+      - geerlingguy.git
+      - { role: ANXS.postgresql, tags: postgresql, when: database_choice == "postgresql"}
+      - { role: ANXS.mysql, tags: mysql, when: database_choice == "mysql" }
+      - cchurch.admin-users
+      - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
+      - geerlingguy.passenger
+      - ANXS.monit
+      - bennojoy.memcached
+      - crushlovely.imagemagick
+      - geerlingguy.redis
