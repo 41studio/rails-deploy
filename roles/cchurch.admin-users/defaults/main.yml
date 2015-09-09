@@ -1,10 +1,5 @@
 ---
-
 admin_users: []
-# - username: "mada"
-  # fullname: "Mada Aryakusumah"
-  # pubkey: "ssh-rsa .."
-
 admin_users_sudo_nopasswd: true
 
 admin_users_to_remove: []
