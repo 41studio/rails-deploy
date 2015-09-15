@@ -14,10 +14,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network "private_network", type: "dhcp"
 
-  config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
-  end
-
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "rails-stack.yml"
     ansible.verbose = "vvvv"
