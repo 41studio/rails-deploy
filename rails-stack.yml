@@ -1,5 +1,4 @@
 ---
-
 - name: Configure servers with ruby support
   hosts: all
   vars_prompt:
