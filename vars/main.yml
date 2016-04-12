@@ -1,10 +1,11 @@
 ---
-# vars file for 41server
-ansible_ssh_user: root
+# vars file for server
+application_name: redmine
+username: railsdev
 
 admin_users:
-  - username: railsdev
-    fullname: "raildev"
+  - username: "{{ username }}"
+    fullname: "{{ username }}"
     pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlNqfo273izwsHvaVcaKudP0LCqSdVyQE3ey4ZdYB3+UT60hYMxtmgd2WC7zZ2Ovxvghp+vEQ/A7sShc1SJl73O4ifJPx4o39qSbdK9MSM54ZeH608TYI27iYgDnKQ52kmG0R4tcRvzFpqCVXYD5PW4zQuyW4usPDXoVZbc73eDiELJRhSZZMxHGL7vgWy3D3m0FkgUXiZV3DBNCmg6GSMYfsoOpjOMb7nhxTA3jJTTe1L8jduWvS0qBImQF7cD+GQ4bHgboqnvdA3TgUtNo92y/ZB8kh0eHOy/AFrdVq9M1zCyyvSiB1Hajhvt/e1yVh/BfP9EkBgRqif5mcdd8AZ me@41studio.com"
 
 # Install 1 or more versions of ruby
@@ -12,9 +13,13 @@ admin_users:
 rvm1_rubies:
   - 'ruby-2.2.3'
 
+rvm1_install_flags: '--auto-dotfiles --user-install'
+rvm1_install_path: "/home/{{ username }}/.rvm"
+rvm1_user: "{{ username }}"
+
 # passenger variable
 passenger_server_name: redmine.41studio.com
-passenger_app_root: /home/railsdev/redmine/current/public
+passenger_app_root: "/home/{{ username }}/{{ application_name }}/current/public"
 passenger_app_env: production
 passenger_ruby: /usr/local/rvm/wrappers/ruby-2.2.3/ruby # when we use ruby 2.2.3 and default dir '/usr/local/rvm/rubies'
 
@@ -35,14 +40,8 @@ mysql_databases:
 mysql_users:
   - name: railsdev
     pass: r41l5d3v
+
 # only open this line when on first install(if you want to change default password) or when change password. Default password for root is no password
 # mysql_current_root_password: ''
+
 mysql_root_password: ''
-
-
-# rails_apps:
-#   - { name: 'berdua', ruby_version: 'ruby-2.2.3', root: '/home/vagrant/berdua/current', env: production }
-# nginx_sites:
-#   - name: 'berdua'
-#     server_name: 'berdua.com'
-#     root: '/home/vagrant/berdua/current'
